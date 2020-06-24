@@ -36,11 +36,13 @@ async function run() {
 
     //const triggered = context.payload.issue.labels.includes(trigger);
     core.debug("Labels: " + JSON.stringify(context.payload.issue.labels));
+
     var triggered = false;
     for(ind = 0; ind < context.payload.issue.labels.length; ind++)
     {
-        core.debug("Label " + ind + ": " + context.payload.issue.labels[ind].name);
         triggered = context.payload.issue.labels[ind].name === trigger;
+        core.debug("Label " + ind + ": " + context.payload.issue.labels[ind].name);
+        core.debug("Triggered: " + triggered);
     }    
 
     core.debug("TRIGGERED: " + triggered);
