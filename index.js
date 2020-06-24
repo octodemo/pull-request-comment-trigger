@@ -34,7 +34,15 @@ async function run() {
         return;
     }
 
-    const triggered = context.payload.issue.labels.includes(trigger);
+    //const triggered = context.payload.issue.labels.includes(trigger);
+    var triggered = false;
+    for(ind = 0; ind < context.payload.issue.labels.length)
+    {
+        triggered = context.payload.issue.labels[ind] == trigger;
+    }    
+
+
+
     core.debug("TRIGGERED: " + triggered);
     const { owner, repo } = context.repo;
 
