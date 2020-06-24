@@ -38,10 +38,9 @@ async function run() {
     var triggered = false;
     for(ind = 0; ind < context.payload.issue.labels.length; ind++)
     {
+        core.debug("Label " + ind + ": " + context.payload.issue.labels[ind]);
         triggered = context.payload.issue.labels[ind] == trigger;
     }    
-
-
 
     core.debug("TRIGGERED: " + triggered);
     const { owner, repo } = context.repo;
