@@ -40,10 +40,11 @@ async function run() {
     var triggered = false;
     for(ind = 0; ind < context.payload.issue.labels.length; ind++)
     {
-        triggered = context.payload.issue.labels[ind].name === trigger;
-        core.debug("Label " + ind + ": " + context.payload.issue.labels[ind].name);
-        core.debug("Triggered: " + triggered);
-        break;
+        if(context.payload.issue.labels[ind].name === trigger)
+        { 
+            triggered = true;
+            break;
+        }
     }    
 
     core.debug("TRIGGERED: " + triggered);
