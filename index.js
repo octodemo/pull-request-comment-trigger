@@ -43,6 +43,7 @@ async function run() {
         triggered = context.payload.issue.labels[ind].name === trigger;
         core.debug("Label " + ind + ": " + context.payload.issue.labels[ind].name);
         core.debug("Triggered: " + triggered);
+        break;
     }    
 
     core.debug("TRIGGERED: " + triggered);
