@@ -13,6 +13,8 @@ async function run() {
         return;
     }
 
+    core.debug("Event Name: " + context.eventName);
+
     const body =
         context.eventName === "issue_comment"
             ? context.payload.comment.body
