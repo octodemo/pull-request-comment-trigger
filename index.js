@@ -13,7 +13,8 @@ async function run() {
         return;
     }
 
-    core.debug("Event Name: " + context.eventName);
+    //core.debug("Event Name: " + context.eventName);
+    core.debug("Context: " + JSON.stringify(context));
 
 /*    const body =
         context.eventName === "issue_comment"
