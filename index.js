@@ -36,7 +36,7 @@ async function run() {
 
     //const triggered = context.payload.issue.labels.includes(trigger);
     var triggered = false;
-    for(ind = 0; ind < context.payload.issue.labels.length)
+    for(ind = 0; ind < context.payload.issue.labels.length; ind++)
     {
         triggered = context.payload.issue.labels[ind] == trigger;
     }    
