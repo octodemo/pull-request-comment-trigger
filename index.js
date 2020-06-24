@@ -13,8 +13,8 @@ async function run() {
         return;
     }
 
-    core.debug("Event Name: " + context.eventName);
-    core.debug("Context: " + JSON.stringify(context));
+//    core.debug("Event Name: " + context.eventName);
+//    core.debug("Context: " + JSON.stringify(context));
 
 /*    const body =
         context.eventName === "issue_comment"
@@ -34,6 +34,8 @@ async function run() {
         return;
     }
 
+    const triggered = context.payload.issue.labels && context.payload.issue.labels.includes(trigger);
+    core.debug("TRIGGERED: " + triggered);
     const { owner, repo } = context.repo;
 
 
