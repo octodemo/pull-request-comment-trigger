@@ -53,7 +53,7 @@ async function run() {
         await client.reactions.createForIssue({
             owner,
             repo,
-            issue_number: context.payload.issue.number;
+            issue_number: context.payload.issue.number,
             content: reaction
         });
 }
