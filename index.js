@@ -35,6 +35,7 @@ async function run() {
     }
 
     //const triggered = context.payload.issue.labels.includes(trigger);
+    core.debug("Labels: " + JSON.stringify(context.payload.issue.labels));
     var triggered = false;
     for(ind = 0; ind < context.payload.issue.labels.length; ind++)
     {
