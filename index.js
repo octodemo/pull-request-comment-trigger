@@ -15,11 +15,14 @@ async function run() {
 
     core.debug("Event Name: " + context.eventName);
 
-    const body =
+/*    const body =
         context.eventName === "issue_comment"
             ? context.payload.comment.body
             : context.payload.pull_request.body;
     core.setOutput('comment_body', body);
+*/
+
+   const body = context.payload.issue.body;
 
     if (
         context.eventName === "issue_comment" &&
