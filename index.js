@@ -34,7 +34,7 @@ async function run() {
         return;
     }
 
-    const triggered = context.payload.issue.labels && context.payload.issue.labels.includes(trigger);
+    const triggered = context.payload.issue.labels.includes(trigger);
     core.debug("TRIGGERED: " + triggered);
     const { owner, repo } = context.repo;
 
