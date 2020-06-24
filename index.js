@@ -48,22 +48,38 @@ async function run() {
     }    
 
     core.debug("TRIGGERED: " + triggered);
+
+    if (!triggered)
+    {
+        core.setFailed("Not a PR issue");
+        return;
+    }
+
+
     const { owner, repo } = context.repo;
 
 
     core.setOutput("triggered", triggered);
+
+    if(triggered != 'true')
+    {
+
+    }
 
     if (!reaction) {
         return;
     }
 
     const client = new GitHub(GITHUB_TOKEN);
-        await client.reactions.createForIssue({
+        
+    await client.reactions.createForIssue({
             owner,
             repo,
             issue_number: context.payload.issue.number,
             content: reaction
         });
+
+
 }
 
 run().catch(err => {
